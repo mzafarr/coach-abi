@@ -1,7 +1,7 @@
 import express from 'express';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
-
+import cors from 'cors';
 dotenv.config();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const app = express();
@@ -9,7 +9,7 @@ const port = 3000;
 
 // Middleware to parse JSON in the request body
 app.use(express.json());
-
+app.use(cors());
 // Define a route for the API
 app.post('/api/chat', async (req, res) => {
   try {
