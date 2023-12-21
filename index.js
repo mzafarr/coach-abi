@@ -58,7 +58,6 @@ Link: "https://vimeo.com/tobymccartney/review/402440389/75bb2a778e"
       model: 'gpt-3.5-turbo',
       messages: messages,
     });
-    console.log(completion.choices[0].message.content)
     res.json({ response: completion.choices[0].message.content });
   } catch (error) {
     console.error('Error:', error.message);
