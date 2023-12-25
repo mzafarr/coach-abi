@@ -56,7 +56,7 @@ Link: "https://vimeo.com/tobymccartney/review/402440389/75bb2a778e"
     // }
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      max_tokens: 1000,
+      max_tokens: 1500,
       messages: messages,
     });
     res.json({ response: completion.choices[0].message.content });
