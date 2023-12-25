@@ -55,7 +55,8 @@ Link: "https://vimeo.com/tobymccartney/review/402440389/75bb2a778e"
     //   messages.unshift({ role: 'system', content: 'You are a helpful assistant.' });
     // }
     const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo-instruct',
+      model: 'gpt-3.5-turbo',
+      max_tokens: 1000,
       messages: messages,
     });
     res.json({ response: completion.choices[0].message.content });
